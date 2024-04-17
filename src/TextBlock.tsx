@@ -9,17 +9,15 @@ function TextBlock() {
     const fetchData = async () => {
       try {
         const u = new Unbody({
-          apiKey: "EFC5C1CF92D914D75FB930949764F1E0",
+          apiKey: "4BA4593AC7E0C01A9D79CBB69040FB38",
           projectId: "7f1e43ac-c640-4669-845f-0c67d4265d4f",
         });
-
-        // const { payload: gDocs}: TextBlockResponse = await u.get.googleDoc.search.about("animal").exec();
 
         const {
           data: { payload },
         } = await u.get.googleDoc.search
           .about("success")
-          .select("title", "text")
+          .select( "title","text")
           .exec();
 
         console.log(payload);
