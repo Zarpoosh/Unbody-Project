@@ -11,8 +11,8 @@ function ImageBlock() {
     const fetchData = async () => {
       try {
         const u = new Unbody({
-          apiKey: "EFC5C1CF92D914D75FB930949764F1E0",
-          projectId: "7f1e43ac-c640-4669-845f-0c67d4265d4f",
+          apiKey: "4BA4593AC7E0C01A9D79CBB69040FB38",
+          projectId: "72755f6e-15ef-433d-b537-41656894f905",
         });
 
 
