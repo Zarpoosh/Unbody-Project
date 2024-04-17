@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Unbody } from "@unbody-io/ts-client";
 
-function Image() {
+function ImageBlock() {
   const [imageWidth, setImageWidth] = useState();
   const [url, setUrl] = useState();
 
@@ -40,4 +40,4 @@ function Image() {
   );
 }
 
-export default Image;
+export default ImageBlock;
