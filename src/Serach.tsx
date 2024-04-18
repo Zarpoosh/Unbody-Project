@@ -11,7 +11,7 @@ const Serach = () => {
       });
   
       // Fetch google docs
-      const response = await u.get.googleDoc.ask('What is the price of bitcoin?', ['summary']).exec();
+      const response = await u.get.googleDoc.ask('What is the price of bitcoin?').exec();
   
       console.log(response);
     } catch (error) {
