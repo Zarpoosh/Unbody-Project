@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Unbody } from "@unbody-io/ts-client";
 import NotFound from "./NotFound";
-import "../index.css";
 import CopyText from "../Copy/CopyText";
+import "../index.css";
+
+//TODO  --------------------------import icons----------------------------------
+// import { MagnifyingGlassIcon } from "@heroicons/24/outline";
 
 function GoogleDocBlock() {
   const [foundDocument, setFoundDocument] = useState<Document | null>(null);
@@ -88,7 +91,7 @@ function GoogleDocBlock() {
 
   return (
     <>
-      {openNotFount && <NotFound />}
+      {openNotFount && <NotFound show={true} />}
       <div
         id="container "
         className="text-center p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto mt-20"
@@ -111,7 +114,8 @@ function GoogleDocBlock() {
             className="bg-lime-600 px-2 md:m-2 m-1 rounded-md "
             onClick={() => onSearch(value)}
           >
-            Search
+             {/* <MagnifyingGlassIcon class="h-6 w-6 text-gray-500" /> */}
+             Search
           </button>
         </div>
 

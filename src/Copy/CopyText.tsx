@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 
-const CopyText = ({ textToCopy }) => {
-  const [copyText, setCopyText] = useState(textToCopy);
+interface textToCopyProps {
+  textToCopy: string;
+}
+
+const CopyText = ({ textToCopy }:textToCopyProps) => {
+  const [copyText] = useState(textToCopy);
   const handleCopy = () => {
     navigator.clipboard.writeText(copyText);
     // console.log(copyText);
