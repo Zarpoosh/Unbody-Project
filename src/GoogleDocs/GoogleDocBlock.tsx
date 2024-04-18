@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Unbody } from "@unbody-io/ts-client";
-// import SearchBox from "./SearchBox";
+import "../index.css";
 
 function GoogleDocBlock() {
   const [foundDocument, setFoundDocument] = useState<Document | null>(null);
 
   const handleSearch = (searchTerm: string) => {
-    console.log('Searching for:', searchTerm);
-    const foundDocument = documents.find((doc) => doc.title.toLowerCase() === searchTerm.toLowerCase());
+    console.log("Searching for:", searchTerm);
+    const foundDocument = documents.find(
+      (doc) => doc.title.toLowerCase() === searchTerm.toLowerCase()
+    );
     if (foundDocument) {
       setFoundDocument(foundDocument);
-      console.log('Found matching document:', foundDocument);
-      
+      console.log("Found matching document:", foundDocument);
+
       // انجام عملیات نمایش مقاله مورد نظر
     } else {
-      console.log('Document not found for:', searchTerm);
+      console.log("Document not found for:", searchTerm);
     }
   };
 
@@ -41,7 +43,23 @@ function GoogleDocBlock() {
         const {
           data: { payload },
         } = await u.get.googleDoc
-          .select("text", "summary", "title", "autoSummary", "path", "pathString", "remoteId", "slug", "size", "sourceId", "subtitle", "toc", "mentions", "modifiedAt", "mimeType")
+          .select(
+            "text",
+            "summary",
+            "title",
+            "autoSummary",
+            "path",
+            "pathString",
+            "remoteId",
+            "slug",
+            "size",
+            "sourceId",
+            "subtitle",
+            "toc",
+            "mentions",
+            "modifiedAt",
+            "mimeType"
+          )
           // .search
           // .about("success") // Replace DOCUMENT_NAME_HERE with the name of the Google Doc you want to search for
           .exec();
@@ -58,16 +76,44 @@ function GoogleDocBlock() {
 
   return (
     <>
-    <input id="searchInput" type="text" onKeyPress={(e) => e.key === 'Enter' && handleSearch(e.target.value)} />
-
-    {foundDocument && (
-        <div>
-          <p>{foundDocument.title}</p>
-          <p>{foundDocument.text}</p>
-          {/* Display more information from foundDocument as needed */}
+      <div className="container">
+        <div id="search-box">
+          <input
+            className="p-3 rounded-md outline-none m-3"
+            id="searchInput"
+            type="text"
+            onKeyPress={(e) =>
+              e.key === "Enter" && handleSearch(e.target.value)
+            }
+          />
+          <button className="bg-lime-600 p-3 rounded-md">Search</button>
         </div>
-      )}
 
+        {foundDocument && (
+          <div id="search-result" className="flex ">
+            <ul className="flex flex-col text-left">
+              <li className="list-item p-4 border-lime-500 border-2 rounded-md m-2">
+                <span className="text-2xl text-lime-600 ">Title</span>
+                <p className="">{foundDocument.title}</p>
+              </li>
+              <li className="list-item p-4 border-lime-500 border-2 rounded-md m-2">
+                <span className="text-2xl text-lime-600 ">Path</span>
+                <p>{foundDocument.pathString}</p>
+              </li>
+              <li className="list-item p-4 border-lime-500 border-2 rounded-md m-2">
+                <span className="text-2xl text-lime-600 ">RemoteId</span>
+                <p>{foundDocument.remoteId}</p>
+              </li>
+              <li className="list-item p-4 border-lime-500 border-2 rounded-md m-2">
+                <span className="text-2xl text-lime-600 ">Content</span>
+                <p className="text-justify p-3">{foundDocument.text}</p>
+              </li>
+            </ul>
+
+            {/* Display more information from foundDocument as needed */}
+          </div>
+        )}
+      </div>
 
       {/* {documents.map((doc, index) => (
         <div key={index}>
