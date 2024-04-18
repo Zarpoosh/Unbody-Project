@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import GoogleDocBlock from './GoogleDocs/GoogleDocBlock.tsx'
-import ImageBlock from './ImageBlock.tsx'
+// import ImageBlock from './ImageBlock.tsx'
 // import TextBlock from './TextBlock.tsx'
 // import Serach from './Serach.tsx'
 
@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   
     <GoogleDocBlock />
     {/* <TextBlock/> */}
-    <ImageBlock/>
+    {/* <ImageBlock/> */}
     {/* <Serach/> */}
   </React.StrictMode>,
 )

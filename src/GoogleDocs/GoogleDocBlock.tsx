@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Unbody } from "@unbody-io/ts-client";
+import NotFound from "./NotFound";
 import "../index.css";
 
 function GoogleDocBlock() {
   const [foundDocument, setFoundDocument] = useState<Document | null>(null);
+  const [documents, setDocuments] = useState<Document[]>([]);
+  const [value, setValue] = useState("");
+  const[openNotFount , setOpenNotFound]=useState(false);
 
-  const handleSearch = (searchTerm: string) => {
+  const onchange = (e) => {
+    setValue(e.target.value);
+  };
+  const onSearch = (searchTerm: string) => {
     console.log("Searching for:", searchTerm);
     const foundDocument = documents.find(
       (doc) => doc.title.toLowerCase() === searchTerm.toLowerCase()
@@ -13,10 +20,15 @@ function GoogleDocBlock() {
     if (foundDocument) {
       setFoundDocument(foundDocument);
       console.log("Found matching document:", foundDocument);
-
+      setValue("");
       // انجام عملیات نمایش مقاله مورد نظر
     } else {
       console.log("Document not found for:", searchTerm);
+      setOpenNotFound(true);
+      setValue("");
+      setTimeout(() => {
+        setOpenNotFound(false);
+      }, 4000);
     }
   };
 
@@ -29,7 +41,6 @@ function GoogleDocBlock() {
     text: string;
     // Add more properties as needed
   };
-  const [documents, setDocuments] = useState<Document[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -76,17 +87,24 @@ function GoogleDocBlock() {
 
   return (
     <>
-      <div className="container">
-        <div id="search-box">
+      {openNotFount && <NotFound />}
+      <div id="container " className="text-center flex  flex-col justify-center mt-20">
+      <h1 className="text-4xl p-3 m-3">my prpject</h1>
+        <div id="search-box flex  mx-2 my-4 w-full">
           <input
-            className="p-3 rounded-md outline-none m-3"
+            className="p-2 rounded-md outline-none m-3 bg-[#3b3b3b]"
             id="searchInput"
             type="text"
-            onKeyPress={(e) =>
-              e.key === "Enter" && handleSearch(e.target.value)
-            }
+            value={value}
+            onChange={onchange}
+            onKeyDown={(e) => e.key === "Enter" && onSearch(e.target.value)}
           />
-          <button className="bg-lime-600 p-3 rounded-md">Search</button>
+          <button
+            className="bg-lime-600 p-2 rounded-md"
+            onClick={() => onSearch(value)}
+          >
+            Search
+          </button>
         </div>
 
         {foundDocument && (
