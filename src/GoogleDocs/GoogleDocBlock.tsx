@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Unbody } from "@unbody-io/ts-client";
 import NotFound from "./NotFound";
-import CopyText from "../Copy/CopyText";
-// import ShowMoreBtn from "./ShowMoreBtn";
+import SearchComponent from "../SaerchComponent/SearchComponent";
 import "../index.css";
 
 
 //TODO  --------------------------import icons----------------------------------
-// import { MagnifyingGlassIcon } from "@heroicons/24/outline";
 
 function GoogleDocBlock() {
   const [foundDocument, setFoundDocument] = useState<Document | null>(null);
@@ -102,7 +100,7 @@ function GoogleDocBlock() {
   return (
     <>
       {openNotFount && <NotFound show={true} />}
-      <div
+      {/* <div
         id="container "
         className="text-center p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto mt-20"
       >
@@ -124,7 +122,6 @@ function GoogleDocBlock() {
             className="bg-lime-600 px-2 md:m-2 m-1 rounded-md "
             onClick={() => onSearch(value)}
           >
-            {/* <MagnifyingGlassIcon class="h-6 w-6 text-gray-500" /> */}
             Search
           </button>
         </div>
@@ -159,10 +156,17 @@ function GoogleDocBlock() {
               </li>
             </ul>
 
-            {/* Display more information from foundDocument as needed */}
+           
           </div>
         )}
-      </div>
+      </div> */}
+         {openNotFount && <NotFound show={true} />}
+      <SearchComponent
+        value={value}
+        onchange={onchange}
+        onSearch={onSearch}
+        foundDocument={foundDocument}
+      />
 
       {documents.map((doc, index) => (
         <div className=" p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto">
@@ -192,7 +196,7 @@ function GoogleDocBlock() {
                 {isOpen ? doc.text : `${doc.text.slice(0, 0)}`}
               </p>
               <button
-                className="bg-lime-500 p-2 rounded-md text-xs text-center m-auto text-slate-800"
+                className="border-lime-500 border-2 active:bg-gray-400 p-2 rounded-md text-xs text-center m-auto "
                 onClick={handleClick}
               >
                 {toggleText}
