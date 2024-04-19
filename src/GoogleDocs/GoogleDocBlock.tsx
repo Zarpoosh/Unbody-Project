@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Unbody } from "@unbody-io/ts-client";
 import NotFound from "./NotFound";
 import CopyText from "../Copy/CopyText";
+// import ShowMoreBtn from "./ShowMoreBtn";
 import "../index.css";
+
 
 //TODO  --------------------------import icons----------------------------------
 // import { MagnifyingGlassIcon } from "@heroicons/24/outline";
@@ -12,6 +14,14 @@ function GoogleDocBlock() {
   const [documents, setDocuments] = useState<Document[]>([]);
   const [value, setValue] = useState("");
   const [openNotFount, setOpenNotFound] = useState(false);
+  //------------------------------------------------------
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleText = isOpen ? "Read Less" : "Show More...";
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
 
   const onchange = (e) => {
     setValue(e.target.value);
@@ -114,13 +124,13 @@ function GoogleDocBlock() {
             className="bg-lime-600 px-2 md:m-2 m-1 rounded-md "
             onClick={() => onSearch(value)}
           >
-             {/* <MagnifyingGlassIcon class="h-6 w-6 text-gray-500" /> */}
-             Search
+            {/* <MagnifyingGlassIcon class="h-6 w-6 text-gray-500" /> */}
+            Search
           </button>
         </div>
 
         {foundDocument && (
-          <div id="search-result" className="flex ">
+          <div id="search-result" className="flex">
             <ul className="flex flex-col text-left w-full ">
               <li className="list-item p-4 border-lime-500 border-2 rounded-md m-2">
                 <span className="text-2xl text-lime-600 ">Title</span>
@@ -154,16 +164,43 @@ function GoogleDocBlock() {
         )}
       </div>
 
-      {/* {documents.map((doc, index) => (
-        <div key={index}>
-          <p>Title: {doc.title}</p>
-          <p>Source ID: {doc.remoteId}</p>
-          <p>Path String: {doc.pathString}</p>
-          <p>Path: {doc.path}</p>
-          <p>Summary: {doc.summary}</p>
-          <p>Text: {doc.text}</p>
+      {documents.map((doc, index) => (
+        <div className=" p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto">
+          <ul
+            key={index}
+            className="flex flex-col text-left border-lime-500 border-2 w-auto my-4 rounded-md border-1"
+          >
+            <li className="p-2 border-lime-500 border-b-2 flex">
+              <span className="text-xl text-lime-600">Title: </span>
+              <p className="text-justify p-1 mx-2">{doc.title}</p>
+            </li>
+            <li className="p-2 border-lime-500 border-b-2 flex">
+              <span className="text-xl text-lime-600">Path String: </span>
+              <p className="text-justify p-1 mx-2">{doc.pathString}</p>
+            </li>
+            <li className="p-2 border-lime-500 border-b-2 ">
+              <span className="text-xl text-lime-600">Source ID:</span>
+              <p className="overflow-x-auto p-3">{doc.remoteId}</p>
+            </li>
+            <li className="list-item p-2 border-lime-500 ">
+              <span className="text-xl text-lime-600">Summary:</span>
+              <p className="text-justify p-1">{doc.summary}</p>
+            </li>
+            <li className="p-2 border-lime-500 flex flex-col text-center">
+              {/* <span className="text-xl text-lime-600">Text:</span> */}
+              <p className="text-justify p-2">
+                {isOpen ? doc.text : `${doc.text.slice(0, 0)}`}
+              </p>
+              <button
+                className="bg-lime-500 p-2 rounded-md text-xs text-center m-auto text-slate-800"
+                onClick={handleClick}
+              >
+                {toggleText}
+              </button>
+            </li>
+          </ul>
         </div>
-      ))} */}
+      ))}
     </>
   );
 }
