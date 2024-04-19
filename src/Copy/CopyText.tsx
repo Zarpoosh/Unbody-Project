@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface textToCopyProps {
   textToCopy: string;
 }
 
 const CopyText = ({ textToCopy }:textToCopyProps) => {
-  const [copyText] = useState(textToCopy);
+  const [copyText,setCopyText] = useState(textToCopy);
+  useEffect(() => {
+    setCopyText(textToCopy);
+  }, [textToCopy]); // This effect will re-run whenever the textToCopy prop changes
+
   const handleCopy = () => {
     navigator.clipboard.writeText(copyText);
     // console.log(copyText);
