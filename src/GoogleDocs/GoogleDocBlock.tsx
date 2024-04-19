@@ -160,7 +160,6 @@ function GoogleDocBlock() {
           </div>
         )}
       </div> */}
-         {openNotFount && <NotFound show={true} />}
       <SearchComponent
         value={value}
         onchange={onchange}
