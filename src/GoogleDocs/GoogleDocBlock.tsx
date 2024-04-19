@@ -21,7 +21,7 @@ function GoogleDocBlock() {
     setIsOpen(!isOpen);
   };
 
-  const onchange = (e) => {
+  const onchange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
   const onSearch = (searchTerm: string) => {

@@ -15,6 +15,10 @@ interface SearchComponentProps {
   }
 
 const SearchComponent: React.FC<SearchComponentProps>  = ({ value, onchange, onSearch, foundDocument }) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        onchange(event);
+      };
+    
   return (
     <div id="container" className="text-center p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto mt-20">
       <h1 className="text-4xl p-3 m-3">my project</h1>
@@ -25,8 +29,8 @@ const SearchComponent: React.FC<SearchComponentProps>  = ({ value, onchange, onS
           id="searchInput"
           type="text"
           value={value}
-          onChange={onchange}
-          onKeyDown={(e) => e.key === "Enter" && onSearch(e.target.value)}
+          onChange={handleChange}
+          onKeyDown={(e) => e.key === "Enter" && onSearch((e.target as HTMLInputElement).value)}
         />
         <button className="bg-lime-600 px-2 md:m-2 m-1 rounded-md" onClick={() => onSearch(value)}>
           Search
