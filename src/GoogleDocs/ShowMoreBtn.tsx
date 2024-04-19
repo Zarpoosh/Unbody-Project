@@ -1,17 +1,21 @@
-import { useState } from 'react';
+import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 
-const ShowMoreBtn = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleText = isOpen ? 'Read Less' : 'Show More';
-
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
+interface ShowMoreBtnProps {
+    isOpen: boolean;
+    onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+  
+const ShowMoreBtn = ({ isOpen, onClick }:ShowMoreBtnProps) => {
+    const toggleText = isOpen ? "" : "More";
 
   return (
-    <button onClick={handleClick}>
-      {toggleText}
+    <button
+      className="border-lime-500 border-2 active:bg-gray-400 p-2 rounded-md text-xs text-center m-auto flex"
+      onClick={onClick}
+    >
+      {/* {isOpen ? <FaAngleUp className="mx-1 my-auto" /> : <FaAngleDown className="mx-1 my-auto" />} */}
+      {toggleText} {isOpen ?  <FaAngleUp />: <FaAngleDown className="mx-1 my-auto" />}
     </button>
   );
 };

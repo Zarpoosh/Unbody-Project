@@ -1,6 +1,10 @@
 import React from 'react';
 import CopyText from "../Copy/CopyText";
 
+//TODO-------------------------- import icons----------------------------
+import { IoSearch } from "react-icons/io5";
+
+
 
 interface SearchComponentProps {
     value: string;
@@ -14,7 +18,7 @@ interface SearchComponentProps {
     } | null;
   }
 
-const SearchComponent: React.FC<SearchComponentProps>  = ({ value, onchange, onSearch, foundDocument }) => {
+const SearchComponent=({ value, onchange, onSearch, foundDocument }:SearchComponentProps) => {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         onchange(event);
       };
@@ -32,8 +36,9 @@ const SearchComponent: React.FC<SearchComponentProps>  = ({ value, onchange, onS
           onChange={handleChange}
           onKeyDown={(e) => e.key === "Enter" && onSearch((e.target as HTMLInputElement).value)}
         />
-        <button className="bg-lime-600 px-2 md:m-2 m-1 rounded-md" onClick={() => onSearch(value)}>
-          Search
+        <button className="bg-lime-600 px-2 md:m-2 m-1 rounded-md flex " onClick={() => onSearch(value)}>
+        <IoSearch  className="my-auto w-5 h-5 "/>
+          <span className="my-auto">Search</span>
         </button>
       </div>
 

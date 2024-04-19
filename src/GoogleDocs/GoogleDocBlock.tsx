@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Unbody } from "@unbody-io/ts-client";
-import NotFound from "./NotFound";
 import SearchComponent from "../SaerchComponent/SearchComponent";
+import ShowMoreBtn from "./ShowMoreBtn";
+import NotFound from "./NotFound";
+
 import "../index.css";
 
-
 //TODO  --------------------------import icons----------------------------------
+
+
 
 function GoogleDocBlock() {
   const [foundDocument, setFoundDocument] = useState<Document | null>(null);
@@ -14,8 +17,6 @@ function GoogleDocBlock() {
   const [openNotFount, setOpenNotFound] = useState(false);
   //------------------------------------------------------
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleText = isOpen ? "Read Less" : "Show More...";
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -83,8 +84,6 @@ function GoogleDocBlock() {
             "modifiedAt",
             "mimeType"
           )
-          // .search
-          // .about("success") // Replace DOCUMENT_NAME_HERE with the name of the Google Doc you want to search for
           .exec();
 
         console.log(payload);
@@ -100,66 +99,6 @@ function GoogleDocBlock() {
   return (
     <>
       {openNotFount && <NotFound show={true} />}
-      {/* <div
-        id="container "
-        className="text-center p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto mt-20"
-      >
-        <h1 className="text-4xl p-3 m-3">my prpject</h1>
-        <div
-          id="search-box"
-          className="mx-2  justify-center flex w-full text-center"
-        >
-          <input
-            className="p-3 rounded-md outline-none md:m-2 m-1 bg-[#3b3b3b] w-4/5 lg:w-4/5"
-            placeholder="Enter file name ..."
-            id="searchInput"
-            type="text"
-            value={value}
-            onChange={onchange}
-            onKeyDown={(e) => e.key === "Enter" && onSearch(e.target.value)}
-          />
-          <button
-            className="bg-lime-600 px-2 md:m-2 m-1 rounded-md "
-            onClick={() => onSearch(value)}
-          >
-            Search
-          </button>
-        </div>
-
-        {foundDocument && (
-          <div id="search-result" className="flex">
-            <ul className="flex flex-col text-left w-full ">
-              <li className="list-item p-4 border-lime-500 border-2 rounded-md m-2">
-                <span className="text-2xl text-lime-600 ">Title</span>
-                <p className="">{foundDocument.title}</p>
-              </li>
-              <li className="list-item p-4 border-lime-500 border-2 rounded-md m-2">
-                <div className="flex"></div>
-                <span className="text-2xl text-lime-600 ">Path</span>
-                <p>{foundDocument.pathString}</p>
-              </li>
-              <li className="list-item p-4 border-lime-500 border-2 rounded-md m-2 ">
-                <div className="flex">
-                  <span className="text-2xl text-lime-600 ">RemoteId</span>
-                  <CopyText textToCopy={foundDocument.remoteId} />
-                </div>
-                <p className="overflow-x-auto p-3">{foundDocument.remoteId}</p>
-              </li>
-              <li className="list-item p-4 border-lime-500 border-2 rounded-md m-2">
-                <div className="flex">
-                  <span className="text-2xl text-lime-600 ">Content</span>
-                  <CopyText textToCopy={foundDocument.text} />
-                </div>
-                <p id="content" className="text-justify p-3">
-                  {foundDocument.text}
-                </p>
-              </li>
-            </ul>
-
-           
-          </div>
-        )}
-      </div> */}
       <SearchComponent
         value={value}
         onchange={onchange}
@@ -194,12 +133,13 @@ function GoogleDocBlock() {
               <p className="text-justify p-2">
                 {isOpen ? doc.text : `${doc.text.slice(0, 0)}`}
               </p>
-              <button
-                className="border-lime-500 border-2 active:bg-gray-400 p-2 rounded-md text-xs text-center m-auto "
+              {/* <button
+                className="border-lime-500 border-2 active:bg-gray-400 p-2 rounded-md text-xs text-center m-auto flex"
                 onClick={handleClick}
               >
-                {toggleText}
-              </button>
+                {toggleText} {isOpen ? <FaAnglesUp className="mx-1 my-auto"/>: <FaAnglesDown  className="mx-1 my-auto"/> }
+              </button> */}
+              <ShowMoreBtn isOpen={isOpen} onClick={handleClick} />
             </li>
           </ul>
         </div>
