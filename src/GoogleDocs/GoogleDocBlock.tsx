@@ -4,7 +4,6 @@ import SearchComponent from "../SaerchComponent/SearchComponent";
 import IsLodingPage from "../IsLodingPage/IsLodingPage.tsx";
 import ShowMoreBtn from "./ShowMoreBtn";
 import NotFound from "./NotFound";
-
 import "../index.css";
 
 //TODO  --------------------------import icons----------------------------------

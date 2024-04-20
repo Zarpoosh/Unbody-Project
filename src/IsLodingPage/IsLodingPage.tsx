@@ -3,8 +3,10 @@ import "./islodingpage.css"
 const IsLodingPage = () => {
   return (
     <>
-    <div className="ball mx-auto mt-[15rem]"></div>
-    <p>list the files...</p>
+    <div id="loding" className="flex flex-col">
+        <div className="ball mx-auto mt-[12rem]"></div>
+        <p className="mx-auto mt-[2rem]">listing files...</p>
+    </div>
     
     </>
   )
