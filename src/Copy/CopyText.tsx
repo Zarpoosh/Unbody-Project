@@ -18,7 +18,7 @@ const CopyText = ({ textToCopy }:textToCopyProps) => {
     <>
       <button
         onClick={handleCopy}
-        className="ml-auto border-1 rounded-md p-1 text-sm active:bg-gray-400 bg-gray-600"
+        className="ml-auto border-1 rounded-md p-1 text-sm active:bg-gray-100 bg-gray-400 border-gray-500 border-2"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

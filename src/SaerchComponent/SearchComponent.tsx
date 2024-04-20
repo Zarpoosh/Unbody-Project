@@ -26,10 +26,10 @@ const SearchComponent=({ value, onchange, onSearch, foundDocument }:SearchCompon
     
   return (
     <div id="container" className="text-center p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto mt-20">
-      <h1 className="text-6xl p-3 m-4 text-lime-500">my project</h1>
+      <h1 className="text-6xl p-3 m-4 text-lime-500">minoo :))</h1>
       <div id="search-box" className="mx-2 justify-center flex w-full text-center">
         <input
-          className="p-3 focus:outline-0 disabled:bg-blue-gray-50 rounded-md outline-none md:m-2 m-1 w-4/5 lg:w-4/5 bg-transparent border-2 border-lime-500 text-gray-600"
+          className="p-3 focus:outline-0 disabled:bg-blue-gray-50 rounded-md outline-none md:m-2 m-1 w-4/5 lg:w-4/5 bg-transparent border-2 border-lime-500"
           placeholder="Enter file name ..."
           id="searchInput"
           type="text"
