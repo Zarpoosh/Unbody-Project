@@ -105,7 +105,7 @@ function GoogleDocBlock() {
   return (
     <>
     <div className={`h-full ${theme}`}>
-    <DarkMode theme={theme} handleThemeSwitch={handleThemeSwitch} />
+      <DarkMode theme={theme} handleThemeSwitch={handleThemeSwitch} />
 
       {openNotFount && <NotFound show={true} />}
       <SearchComponent
