@@ -1,7 +1,7 @@
 .ball {
   width: 150px;
   height: 10px;
-  background-color: #5c24fe;
+  background-color: #9825fc;
   position: relative;
   transform: rotate(0deg);
   animation: updown 1.5s infinite;

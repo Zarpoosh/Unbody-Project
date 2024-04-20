@@ -20,7 +20,7 @@ const DarkMode = ({ theme, handleThemeSwitch }: DarkModeProps) => {
       <div className="">
     {/* Clicking the button triggers the handleThemeSwitch function passed as a prop. */}
         <button
-          className={`p-4 border-2 border-[#5c24fe] rounded-full m-5 ${theme}`}
+          className={`p-4 border-2 border-[#9825fc] rounded-full m-5 ${theme}`}
           onClick={handleThemeSwitch}
         >
           {/* If theme is "light", displays the light mode icon (MdOutlineLightMode). */}

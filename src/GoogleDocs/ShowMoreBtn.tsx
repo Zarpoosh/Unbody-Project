@@ -19,7 +19,7 @@ const ShowMoreBtn = ({ isOpen, onClick }: ShowMoreBtnProps) => {
 
   return (
     <button
-      className="border-[#5c24fe] border-2 active:bg-gray-400 p-2 rounded-md text-xs text-center m-auto flex"
+      className="border-[#9825fc] border-2 active:bg-gray-400 p-2 rounded-md text-xs text-center m-auto flex"
       onClick={onClick}
     >
       {toggleText}{" "}

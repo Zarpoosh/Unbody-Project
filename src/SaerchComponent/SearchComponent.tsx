@@ -43,13 +43,13 @@ const SearchComponent = ({
       id="container"
       className="text-center p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto mt-5"
     >
-      <h1 className="text-6xl p-3 m-4 text-[#5c24fe]">listing files :)</h1>
+      <h1 className="text-6xl p-3 m-4 text-[#9825fc]">listing files :)</h1>
       <div
         id="search-box"
         className="mx-2 justify-center flex w-full text-center"
       >
         <input
-          className="p-3 focus:outline-0 disabled:bg-blue-gray-50 rounded-md outline-none md:m-2 m-1 w-4/5 lg:w-4/5 bg-transparent border-2 border-[#5c24fe]"
+          className="p-3 focus:outline-0 disabled:bg-blue-gray-50 rounded-md outline-none md:m-2 m-1 w-4/5 lg:w-4/5 bg-transparent border-2 border-[#9825fc]"
           placeholder="Enter file name ..."
           id="searchInput"
           type="text"
@@ -72,26 +72,26 @@ const SearchComponent = ({
       {foundDocument && (
         <div id="search-result" className="flex">
           <ul className="flex flex-col text-left w-full">
-            <li className="list-item p-4 border-[#5c24fe] border-2 rounded-md m-2">
-              <span className="text-2xl text-[#5c24fe]">Title</span>
+            <li className="list-item p-4 border-[#9825fc] border-2 rounded-md m-2">
+              <span className="text-2xl text-[#9825fc]">Title</span>
               <p>{foundDocument.title}</p>
             </li>
-            <li className="list-item p-4 border-[#5c24fe] border-2 rounded-md m-2">
+            <li className="list-item p-4 border-[#9825fc] border-2 rounded-md m-2">
               <div className="flex"></div>
-              <span className="text-2xl text-[#5c24fe]">Path</span>
+              <span className="text-2xl text-[#9825fc]">Path</span>
               <p>{foundDocument.pathString}</p>
             </li>
-            <li className="list-item p-4 border-[#5c24fe] border-2 rounded-md m-2">
+            <li className="list-item p-4 border-[#9825fc] border-2 rounded-md m-2">
               <div className="flex">
-                <span className="text-2xl text-[#5c24fe]">RemoteId</span>
+                <span className="text-2xl text-[#9825fc]">RemoteId</span>
                 {/* copy text */}
                 <CopyText textToCopy={foundDocument.remoteId} />
               </div>
               <p className="overflow-x-auto p-3">{foundDocument.remoteId}</p>
             </li>
-            <li className="list-item p-4 border-[#5c24fe] border-2 rounded-md m-2">
+            <li className="list-item p-4 border-[#9825fc] border-2 rounded-md m-2">
               <div className="flex">
-                <span className="text-2xl text-[#5c24fe]">Content</span>
+                <span className="text-2xl text-[#9825fc]">Content</span>
                 {/* copy text */}
                 <CopyText textToCopy={foundDocument.text} />
               </div>
