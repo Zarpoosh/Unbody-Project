@@ -1,43 +1,43 @@
-.ball{
-    width: 150px;
-    height: 10px;
-    background-color: #65A30D;
-    position: relative;
-    transform: rotate(0deg);
-    animation: updown 1.5s infinite ;
+.ball {
+  width: 150px;
+  height: 10px;
+  background-color: #5c24fe;
+  position: relative;
+  transform: rotate(0deg);
+  animation: updown 1.5s infinite;
 }
-.ball::after{
-    content: '';
-    width: 50px;
-   height: 50px;
-   background: #65A30D;
-   display: block;
-   border-radius: 50%;
-   position: absolute;
-   bottom: 12px;
-   left: 0;
-   animation: play 1.5s infinite;
+.ball::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  animation: play 1.5s infinite;
 }
 @keyframes play {
-    0%{
-        transform: translate(0);
-    }
-    50%{
-        transform: translate(120px);
-    }
-    100%{
-        transform: translate(0px);
-    }
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(120px);
+  }
+  100% {
+    transform: translate(0px);
+  }
 }
 
-@keyframes updown{
-    0%{
-        transform: rotate(0deg);
-    }
-    50%{
-        transform: rotate(-30deg);
-    }
-    100%{
-        transform: rotate(30deg);
-    }
+@keyframes updown {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
 }

@@ -1,9 +1,8 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { IoIosArrowUp } from "react-icons/io";
-import "../index.css";
+import "./backtotop.css";
 
-
-const BackToTupBtn=()=> {
+const BackToTupBtn = () => {
   const [backToTupBtn, setBackToTupBtn] = useState(false);
 
   useEffect(() => {
@@ -23,19 +22,18 @@ const BackToTupBtn=()=> {
     });
   };
 
-
   return (
     <>
-
-        {backToTupBtn && (
-          <button
-            onClick={scrollUp}
-            className="bg-lime-500 p-3 rounded-full fixed left-0  bottom-0 flex ml-5 mb-5"
-          >
-            <IoIosArrowUp />
-          </button>
-        )}
+      {backToTupBtn && (
+        <button
+          onClick={scrollUp}
+          id="back-top"
+          className="p-3 rounded-full fixed left-0  bottom-0 text-white flex ml-5 mb-5"
+        >
+          <IoIosArrowUp />
+        </button>
+      )}
     </>
   );
-}
+};
 export default BackToTupBtn;

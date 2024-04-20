@@ -4,7 +4,7 @@ import SearchComponent from "../SaerchComponent/SearchComponent";
 import IsLodingPage from "../IsLodingPage/IsLodingPage.tsx";
 import ShowMoreBtn from "./ShowMoreBtn";
 import NotFound from "./NotFound";
-import DarkMode from '../ChangeMode/DarkMode.tsx';
+import DarkMode from "../ChangeMode/DarkMode.tsx";
 
 import "../index.css";
 
@@ -17,11 +17,11 @@ function GoogleDocBlock() {
   const [openNotFount, setOpenNotFound] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState("dark");
 
   const handleThemeSwitch = () => {
-    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
-  }
+    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
+  };
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -104,49 +104,49 @@ function GoogleDocBlock() {
 
   return (
     <>
-    <div className={`h-full ${theme}`}>
-      <DarkMode theme={theme} handleThemeSwitch={handleThemeSwitch} />
+      <div className={`h-full ${theme}`}>
+        <DarkMode theme={theme} handleThemeSwitch={handleThemeSwitch} />
 
-      {openNotFount && <NotFound show={true} />}
-      <SearchComponent
-        value={value}
-        onchange={onchange}
-        onSearch={onSearch}
-        foundDocument={foundDocument}
-      />
+        {openNotFount && <NotFound show={true} />}
+        <SearchComponent
+          value={value}
+          onchange={onchange}
+          onSearch={onSearch}
+          foundDocument={foundDocument}
+        />
 
-      {documents.map((doc, index) => (
-        <div className=" p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto">
-          <ul
-            key={index}
-            className="flex flex-col text-left border-lime-500 border-2 w-auto my-4 rounded-md border-1"
-          >
-            <li className="p-2 border-gray-600 border-b-2 flex">
-              <span className="text-xl text-lime-500">Title: </span>
-              <p className="text-justify p-1 mx-2">{doc.title}</p>
-            </li>
-            <li className="p-2 border-gray-600 border-b-2 flex">
-              <span className="text-xl text-lime-500">Path String: </span>
-              <p className="text-justify p-1 mx-2">{doc.pathString}</p>
-            </li>
-            <li className="p-2 border-gray-600 border-b-2 ">
-              <span className="text-xl text-lime-500">Source ID:</span>
-              <p className="overflow-x-auto p-3">{doc.remoteId}</p>
-            </li>
-            <li className="list-item p-2 border-gray-600 ">
-              <span className="text-xl text-lime-500">Summary:</span>
-              <p className="text-justify p-1">{doc.summary}</p>
-            </li>
-            <li className="p-2 border-gray-600 flex flex-col text-center">
-              <p className="text-justify p-2">
-                {isOpen ? doc.text : `${doc.text.slice(0, 0)}`}
-              </p>
-              <ShowMoreBtn isOpen={isOpen} onClick={handleClick} />
-            </li>
-          </ul>
-        </div>
-      ))}
-      {isLoading ? <IsLodingPage /> : null}
+        {documents.map((doc, index) => (
+          <div className=" p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto">
+            <ul
+              key={index}
+              className={`flex ${theme} flex-col text-left border-[#5c24fe] border-2 w-auto my-4 rounded-md border-1`}
+            >
+              <li className="p-2 border-gray-600 border-b-2 flex">
+                <span className="text-xl text-[#5c24fe]">Title: </span>
+                <p className="text-justify p-1 mx-2">{doc.title}</p>
+              </li>
+              <li className="p-2 border-gray-600 border-b-2 flex">
+                <span className="text-xl text-[#5c24fe]">Path String: </span>
+                <p className="text-justify p-1 mx-2">{doc.pathString}</p>
+              </li>
+              <li className="p-2 border-gray-600 border-b-2 ">
+                <span className="text-xl text-[#5c24fe]">Source ID:</span>
+                <p className="overflow-x-auto p-3">{doc.remoteId}</p>
+              </li>
+              <li className="list-item p-2 border-gray-600 ">
+                <span className="text-xl text-[#5c24fe]">Summary:</span>
+                <p className="text-justify p-1">{doc.summary}</p>
+              </li>
+              <li className="p-2 border-gray-600 flex flex-col text-center">
+                <p className="text-justify p-2">
+                  {isOpen ? doc.text : `${doc.text.slice(0, 0)}`}
+                </p>
+                <ShowMoreBtn isOpen={isOpen} onClick={handleClick} />
+              </li>
+            </ul>
+          </div>
+        ))}
+        {isLoading ? <IsLodingPage /> : null}
       </div>
     </>
   );

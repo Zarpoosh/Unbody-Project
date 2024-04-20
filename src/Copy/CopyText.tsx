@@ -4,8 +4,8 @@ interface textToCopyProps {
   textToCopy: string;
 }
 
-const CopyText = ({ textToCopy }:textToCopyProps) => {
-  const [copyText,setCopyText] = useState(textToCopy);
+const CopyText = ({ textToCopy }: textToCopyProps) => {
+  const [copyText, setCopyText] = useState(textToCopy);
   useEffect(() => {
     setCopyText(textToCopy);
   }, [textToCopy]); // This effect will re-run whenever the textToCopy prop changes
@@ -18,7 +18,7 @@ const CopyText = ({ textToCopy }:textToCopyProps) => {
     <>
       <button
         onClick={handleCopy}
-        className="ml-auto border-1 rounded-md p-1 text-sm active:bg-gray-100 bg-gray-400 border-gray-500 border-2"
+        className="ml-auto border-1 rounded-md p-1 text-sm active:bg-gray-100 bg-gray-400 border-gray-5c00 border-2"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
