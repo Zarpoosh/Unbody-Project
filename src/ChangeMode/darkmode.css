@@ -1,0 +1,9 @@
+.dark {
+    background-color: #0e0d0d !important;
+    color: #fff;
+}
+
+.light {
+    background-color: #fff !important;
+    color: #0e0d0d;
+}

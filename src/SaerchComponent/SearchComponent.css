@@ -7,4 +7,9 @@ h1{
     line-height: 1.5;
     font-weight: 100;
     text-transform: uppercase;
+    text-wrap: balance;
+
 }
+.input-field {
+    background-color: transparent; /* Reset background color to transparent */
+  }

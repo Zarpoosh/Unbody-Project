@@ -4,6 +4,8 @@ import SearchComponent from "../SaerchComponent/SearchComponent";
 import IsLodingPage from "../IsLodingPage/IsLodingPage.tsx";
 import ShowMoreBtn from "./ShowMoreBtn";
 import NotFound from "./NotFound";
+import DarkMode from '../ChangeMode/DarkMode.tsx';
+
 import "../index.css";
 
 //TODO  --------------------------import icons----------------------------------
@@ -15,6 +17,11 @@ function GoogleDocBlock() {
   const [openNotFount, setOpenNotFound] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [theme, setTheme] = useState('dark');
+
+  const handleThemeSwitch = () => {
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+  }
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -97,6 +104,9 @@ function GoogleDocBlock() {
 
   return (
     <>
+    <div className={`h-full ${theme}`}>
+    <DarkMode theme={theme} handleThemeSwitch={handleThemeSwitch} />
+
       {openNotFount && <NotFound show={true} />}
       <SearchComponent
         value={value}
@@ -137,6 +147,7 @@ function GoogleDocBlock() {
         </div>
       ))}
       {isLoading ? <IsLodingPage /> : null}
+      </div>
     </>
   );
 }
