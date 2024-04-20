@@ -4,6 +4,7 @@ import SearchComponent from "../SaerchComponent/SearchComponent";
 import ShowMoreBtn from "./ShowMoreBtn";
 import NotFound from "./NotFound";
 
+
 import "../index.css";
 
 //TODO  --------------------------import icons----------------------------------
@@ -129,16 +130,9 @@ function GoogleDocBlock() {
               <p className="text-justify p-1">{doc.summary}</p>
             </li>
             <li className="p-2 border-lime-500 flex flex-col text-center">
-              {/* <span className="text-xl text-lime-600">Text:</span> */}
               <p className="text-justify p-2">
                 {isOpen ? doc.text : `${doc.text.slice(0, 0)}`}
               </p>
-              {/* <button
-                className="border-lime-500 border-2 active:bg-gray-400 p-2 rounded-md text-xs text-center m-auto flex"
-                onClick={handleClick}
-              >
-                {toggleText} {isOpen ? <FaAnglesUp className="mx-1 my-auto"/>: <FaAnglesDown  className="mx-1 my-auto"/> }
-              </button> */}
               <ShowMoreBtn isOpen={isOpen} onClick={handleClick} />
             </li>
           </ul>
