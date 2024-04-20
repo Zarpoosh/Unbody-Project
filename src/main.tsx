@@ -6,7 +6,6 @@ import './index.css'
 
 
 
-
 // import ImageBlock from './ImageBlock.tsx'
 // import TextBlock from './TextBlock.tsx'
 // import Serach from './Serach.tsx'
