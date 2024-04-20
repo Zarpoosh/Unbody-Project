@@ -1,7 +1,7 @@
 import React from "react";
 import CopyText from "../Copy/CopyText";
 import "./SearchComponent.css";
-import "../index.css"
+import "../index.css";
 
 //TODO-------------------------- import icons----------------------------
 import { IoSearch } from "react-icons/io5";
@@ -31,7 +31,7 @@ const SearchComponent = ({
   return (
     <div
       id="container"
-      className="text-center p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto mt-20"
+      className="text-center p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto mt-5"
     >
       <h1 className="text-6xl p-3 m-4 text-[#5c24fe]">listing files :)</h1>
       <div

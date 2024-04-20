@@ -18,6 +18,8 @@ function GoogleDocBlock() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [theme, setTheme] = useState("dark");
+  const [numOfFiles, setNumOfFiles] = useState(0); // State to hold the number of available files
+
 
   const handleThemeSwitch = () => {
     setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
@@ -93,14 +95,15 @@ function GoogleDocBlock() {
 
         console.log(payload);
         setDocuments(payload);
-        setIsLoading(false); // Set loading state to false after data is fetched
+        setIsLoading(false); 
+        setNumOfFiles(documents.length);// Set loading state to false after data is fetched
       } catch (error) {
         console.error("Error fetching document data:", error);
       }
     };
 
     fetchData();
-  }, []);
+  }, [documents.length]);
 
   return (
     <>
@@ -114,9 +117,10 @@ function GoogleDocBlock() {
           onSearch={onSearch}
           foundDocument={foundDocument}
         />
-
+        <div className="flex flex-col">
+          <p id="total-file" className="text-2xl p-2 mx-auto">Google Docs files available: {numOfFiles}</p>
         {documents.map((doc, index) => (
-          <div className=" p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto">
+          <div  key={index} className=" p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto">
             <ul
               key={index}
               className={`flex ${theme} flex-col text-left border-[#5c24fe] border-2 w-auto my-4 rounded-md border-1`}
@@ -147,6 +151,8 @@ function GoogleDocBlock() {
           </div>
         ))}
         {isLoading ? <IsLodingPage /> : null}
+        </div>
+        
       </div>
     </>
   );
