@@ -1,6 +1,7 @@
 import React from "react";
 import CopyText from "../Copy/CopyText";
 import "./SearchComponent.css";
+import "../index.css"
 
 //TODO-------------------------- import icons----------------------------
 import { IoSearch } from "react-icons/io5";
@@ -32,7 +33,7 @@ const SearchComponent = ({
       id="container"
       className="text-center p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto mt-20"
     >
-      <h1 className="text-7xl p-3 m-4 text-[#5c24fe]">minoo :))</h1>
+      <h1 className="text-6xl p-3 m-4 text-[#5c24fe]">listing files :)</h1>
       <div
         id="search-box"
         className="mx-2 justify-center flex w-full text-center"
