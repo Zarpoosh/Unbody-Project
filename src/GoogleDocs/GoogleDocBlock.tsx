@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Unbody } from "@unbody-io/ts-client";
 import SearchComponent from "../SaerchComponent/SearchComponent";
+import IsLodingPage from "../IsLodingPage/IsLodingPage.tsx";
 import ShowMoreBtn from "./ShowMoreBtn";
 import NotFound from "./NotFound";
-
 
 import "../index.css";
 
 //TODO  --------------------------import icons----------------------------------
-
-
 
 function GoogleDocBlock() {
   const [foundDocument, setFoundDocument] = useState<Document | null>(null);
   const [documents, setDocuments] = useState<Document[]>([]);
   const [value, setValue] = useState("");
   const [openNotFount, setOpenNotFound] = useState(false);
-  //------------------------------------------------------
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -89,6 +87,7 @@ function GoogleDocBlock() {
 
         console.log(payload);
         setDocuments(payload);
+        setIsLoading(false); // Set loading state to false after data is fetched
       } catch (error) {
         console.error("Error fetching document data:", error);
       }
@@ -138,6 +137,7 @@ function GoogleDocBlock() {
           </ul>
         </div>
       ))}
+      {isLoading ? <IsLodingPage /> : null}
     </>
   );
 }
