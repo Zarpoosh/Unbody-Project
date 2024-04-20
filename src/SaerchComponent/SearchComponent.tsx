@@ -6,11 +6,12 @@ import "../index.css";
 //TODO-------------------------- import icons----------------------------
 import { IoSearch } from "react-icons/io5";
 
+// Defines the expected props for the component:
 interface SearchComponentProps {
-  value: string;
-  onchange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onSearch: (value: string) => void;
-  foundDocument: {
+  value: string;                      //value: Current value entered in the search bar (string).
+  onchange: (event: React.ChangeEvent<HTMLInputElement>) => void;    //onchange: Function to handle changes in the search input.
+  onSearch: (value: string) => void;                                 //onSearch: Function to trigger the document search based on the entered value.
+  foundDocument: {                                                  //foundDocument: Object containing details of the searched document (if found), including title, path string, remote ID, and text content. 
     title: string;
     pathString: string;
     remoteId: string;
@@ -18,12 +19,21 @@ interface SearchComponentProps {
   } | null;
 }
 
+
+// ==================>>>>>>>React Component for Document Search<<<<<<<<<<<==========
+// Provides a search bar for users to enter file names.
+// Offers a "Search" button to trigger the search functionality.
+// Displays the search result (if any) including title, path, remote ID, and content.
+// Allows copying the document's remote ID and content to the clipboard.
+// -=---------------------------------------------------------------------------------
 const SearchComponent = ({
   value,
   onchange,
   onSearch,
   foundDocument,
 }: SearchComponentProps) => {
+
+  // Defines a handleChange function to update the value state based on user input in the search bar.
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onchange(event);
   };
@@ -74,6 +84,7 @@ const SearchComponent = ({
             <li className="list-item p-4 border-[#5c24fe] border-2 rounded-md m-2">
               <div className="flex">
                 <span className="text-2xl text-[#5c24fe]">RemoteId</span>
+                {/* copy text */}
                 <CopyText textToCopy={foundDocument.remoteId} />
               </div>
               <p className="overflow-x-auto p-3">{foundDocument.remoteId}</p>
@@ -81,6 +92,7 @@ const SearchComponent = ({
             <li className="list-item p-4 border-[#5c24fe] border-2 rounded-md m-2">
               <div className="flex">
                 <span className="text-2xl text-[#5c24fe]">Content</span>
+                {/* copy text */}
                 <CopyText textToCopy={foundDocument.text} />
               </div>
               <p id="content" className="text-justify p-3">

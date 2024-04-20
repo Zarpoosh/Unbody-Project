@@ -1,5 +1,9 @@
 import "./islodingpage.css"
 
+
+// ==============>>>>>> React Component for Loading Indicator<<<<<=============
+// This component is, for displaying a loading indicator while data is being fetched.Displays a simple loading animation with a "Processing..." message.
+
 const IsLodingPage = () => {
   return (
     <>

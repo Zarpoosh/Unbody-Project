@@ -1,18 +1,28 @@
 import { useState, useEffect } from "react";
 
+//* Defines the expected prop for the component: *
 interface textToCopyProps {
   textToCopy: string;
 }
+//=======================>>>>>>>>>>React Component for Copying Text<<<<<<<<=====================
+//* this component that allows users to copy a provided text string to their clipboard.
+// Accepts a prop, textToCopy, containing the text to be copied.
+// Displays a button with a copy icon.
+// Clicking the button copies the textToCopy to the clipboard.
+// -------------------------------------------------------------------------------------------
 
 const CopyText = ({ textToCopy }: textToCopyProps) => {
   const [copyText, setCopyText] = useState(textToCopy);
+
+  //* useEffect ensures copyText is always updated when the textToCopy prop changes.
   useEffect(() => {
     setCopyText(textToCopy);
-  }, [textToCopy]); // This effect will re-run whenever the textToCopy prop changes
+  }, [textToCopy]);
 
   const handleCopy = () => {
+    //* Uses navigator.clipboard.writeText to copy the current copyText to the clipboard.
     navigator.clipboard.writeText(copyText);
-    // console.log(copyText);
+    //* console.log(copyText);
   };
   return (
     <>
