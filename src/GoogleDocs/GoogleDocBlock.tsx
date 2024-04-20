@@ -111,23 +111,23 @@ function GoogleDocBlock() {
             key={index}
             className="flex flex-col text-left border-lime-500 border-2 w-auto my-4 rounded-md border-1"
           >
-            <li className="p-2 border-lime-500 border-b-2 flex">
-              <span className="text-xl text-lime-600">Title: </span>
+            <li className="p-2 border-gray-600 border-b-2 flex">
+              <span className="text-xl text-lime-500">Title: </span>
               <p className="text-justify p-1 mx-2">{doc.title}</p>
             </li>
-            <li className="p-2 border-lime-500 border-b-2 flex">
-              <span className="text-xl text-lime-600">Path String: </span>
+            <li className="p-2 border-gray-600 border-b-2 flex">
+              <span className="text-xl text-lime-500">Path String: </span>
               <p className="text-justify p-1 mx-2">{doc.pathString}</p>
             </li>
-            <li className="p-2 border-lime-500 border-b-2 ">
-              <span className="text-xl text-lime-600">Source ID:</span>
+            <li className="p-2 border-gray-600 border-b-2 ">
+              <span className="text-xl text-lime-500">Source ID:</span>
               <p className="overflow-x-auto p-3">{doc.remoteId}</p>
             </li>
-            <li className="list-item p-2 border-lime-500 ">
-              <span className="text-xl text-lime-600">Summary:</span>
+            <li className="list-item p-2 border-gray-600 ">
+              <span className="text-xl text-lime-500">Summary:</span>
               <p className="text-justify p-1">{doc.summary}</p>
             </li>
-            <li className="p-2 border-lime-500 flex flex-col text-center">
+            <li className="p-2 border-gray-600 flex flex-col text-center">
               <p className="text-justify p-2">
                 {isOpen ? doc.text : `${doc.text.slice(0, 0)}`}
               </p>

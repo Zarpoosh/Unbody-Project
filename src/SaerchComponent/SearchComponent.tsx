@@ -1,5 +1,6 @@
 import React from 'react';
 import CopyText from "../Copy/CopyText";
+import "./SearchComponent.css"
 
 //TODO-------------------------- import icons----------------------------
 import { IoSearch } from "react-icons/io5";
@@ -25,7 +26,7 @@ const SearchComponent=({ value, onchange, onSearch, foundDocument }:SearchCompon
     
   return (
     <div id="container" className="text-center p-4 flex flex-col justify-center w-full sm:w-3/5 m-auto mt-20">
-      <h1 className="text-4xl p-3 m-3">my project</h1>
+      <h1 className="text-6xl p-3 m-4 text-lime-500">my project</h1>
       <div id="search-box" className="mx-2 justify-center flex w-full text-center">
         <input
           className="p-3 rounded-md outline-none md:m-2 m-1 bg-[#3b3b3b] w-4/5 lg:w-4/5"
