@@ -3,7 +3,7 @@
 Getting Started with react-unbody after Cloning
  ### Prerequisites:
 📌- Node.js 16.x or above
-📌- bun or npm or yarn
+-📌 bun or npm or yarn
 
 ## Steps:
 run this command in your bash or terminal to clone project: 👇
