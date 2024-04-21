@@ -35,7 +35,7 @@ This will start the project in development mode using Vite.
 # How we use the project:🤔🤷‍♀️❓
 - go to the `GoogleDocs` folder and `GoogleDocBlock` component.
 - find the blow codes and your `apikey` and `projectId` in your unbody source.
-```
+```JS
 const u = new Unbody({
           apiKey: "YOUR_API_KEY",
           projectId: "YOUR_PROJECT_ID",
