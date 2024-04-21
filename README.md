@@ -46,8 +46,9 @@ const u = new Unbody({
         });
 ```
 
-1- Open `http://localhost:3000 in your browser`.
-2- Configure your Unbody project using the Unbody.io UI.
+1- Open `http://localhost:3000 in your browser`. 
+<br>
+2- Configure your Unbody project using the Unbody.io UI.<br>
 3- Use `react-unbody` to interact with the Unbody.io API in your React application.
 
 ### Tips:
