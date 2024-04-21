@@ -34,7 +34,7 @@ This will start the project in development mode using Vite.
 
 # How we use the project:🤔🤷‍♀️❓
 - go to the `GoogleDocs` folder and `GoogleDocBlock` component.
-- find the blow codes and your `apikey` and `projectId` in your unbody source.
+- find the blow codes and your `apikey` and `projectId` in your unbody source and paste.
 ![Screenshot from 2024-04-21 07-41-31](https://github.com/Zarpoosh/Unbody-Project/assets/122268379/eeb318cf-d83a-4ae2-b408-0cbd372cee09)
 ![Screenshot from 2024-04-21 07-40-03](https://github.com/Zarpoosh/Unbody-Project/assets/122268379/f74e91be-2a1d-4569-a2c8-03198f434cd4)
 
