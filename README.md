@@ -46,6 +46,7 @@ const u = new Unbody({
         });
 ```
 
+==>>> After pasting the ID of your Google Drive files, it will be listed and you can access them by searching the name of your files
 1- Open `http://localhost:3000 in your browser`. 
 <br>
 2- Configure your Unbody project using the Unbody.io UI.<br>
