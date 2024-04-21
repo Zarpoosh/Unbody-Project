@@ -33,6 +33,15 @@ npm run dev
 This will start the project in development mode using Vite.
 
 # How we use the project:🤔🤷‍♀️❓
+- go to the `GoogleDocs` folder and `GoogleDocBlock` component.
+- find the blow codes and your `apikey` and `projectId` in your unbody source.
+```
+const u = new Unbody({
+          apiKey: "YOUR_API_KEY",
+          projectId: "YOUR_PROJECT_ID",
+        });
+```
+
 1- Open `http://localhost:3000 in your browser`.
 2- Configure your Unbody project using the Unbody.io UI.
 3- Use `react-unbody` to interact with the Unbody.io API in your React application.
