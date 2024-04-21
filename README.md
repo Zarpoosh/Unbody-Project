@@ -7,10 +7,14 @@ Getting Started with react-unbody after Cloning
 
 ## Steps:
 run this command in your bash or terminal to clone project: 👇
-``` git clone https://github.com/your-username/react-unbody.git your-project-name ```
+``` 
+git clone https://github.com/your-username/react-unbody.git your-project-name
+```
 
 ## Navigate into the project directory:
-``` cd your-project-name ```
+``` 
+cd your-project-name
+```
 
 ## Install dependencies:
 there is 3 ways to install dependencies. You must run one of the following commands:👇
