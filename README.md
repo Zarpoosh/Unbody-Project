@@ -2,8 +2,8 @@
 
 Getting Started with react-unbody after Cloning
  ### Prerequisites:
-📌- Node.js 16.x or above
--📌 bun or npm or yarn
+- Node.js 16.x or above
+- bun or npm or yarn
 
 ## Steps:
 run this command in your bash or terminal to clone project: 👇
@@ -34,15 +34,10 @@ This will start the project in development mode using Vite.
 3- Use `react-unbody` to interact with the Unbody.io API in your React application.
 
 ### Tips:
-📌- For more information about react-unbody, refer to the official documentation: [https://github.com/unbody-io]
-📌- For more information about Unbody.io, visit: [https://www.unbody.io/]
+- For more information about react-unbody, refer to the official documentation: [https://github.com/unbody-io]
+- For more information about Unbody.io, visit: [https://www.unbody.io/]
 
-
-
-
-
-
-
+<br><br><br>
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
