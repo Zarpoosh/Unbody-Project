@@ -1,5 +1,49 @@
 # React + TypeScript + Vite + Unbody api 🔥
 
+Getting Started with react-unbody after Cloning
+ ### Prerequisites:
+- Node.js 16.x or above
+- npm or yarn
+
+### Steps:
+run this command in your bash or terminal to clone project: 👇
+``` git clone https://github.com/your-username/react-unbody.git your-project-name ```
+
+### Navigate into the project directory:
+``` cd your-project-name ```
+
+### Install dependencies:
+there is 3 ways to install dependencies. You must run one of the following commands:👇
+```
+bun install
+npm install
+yarn install
+```
+
+### Start the project:
+```
+bun run dev
+yarn dev
+npm run dev
+```
+This will start the project in development mode using Vite.
+
+# How we use the project:🤔🤷‍♀️❓
+1- Open `http://localhost:3000 in your browser`.
+2- Configure your Unbody project using the Unbody.io UI.
+3- Use `react-unbody` to interact with the Unbody.io API in your React application.
+
+### Tips:
+- For more information about react-unbody, refer to the official documentation: [https://github.com/unbody-io]
+- For more information about Unbody.io, visit: [https://www.unbody.io/]
+
+
+
+
+
+
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
