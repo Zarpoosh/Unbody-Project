@@ -46,7 +46,7 @@ const u = new Unbody({
         });
 ```
 
-==>>> After pasting the `PROJECT_ID` & `API_KEY` of your Google Drive files, it will be listed and you can access them by searching the name of your files
+==>>> After pasting the `PROJECT_ID` & `API_KEY` of your Google Drive files, it will be listed and you can access them by searching the name of your files.
 For example, in the folder that I linked with Unbody, there are the following files that you can access their information by searching for these names:
 - animal
 - galexy
