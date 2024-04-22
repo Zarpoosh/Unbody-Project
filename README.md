@@ -46,7 +46,16 @@ const u = new Unbody({
         });
 ```
 
-==>>> After pasting the ID of your Google Drive files, it will be listed and you can access them by searching the name of your files
+==>>> After pasting the `PROJECT_ID` & `API_KEY` of your Google Drive files, it will be listed and you can access them by searching the name of your files
+For example, in the folder that I linked with Unbody, there are the following files that you can access their information by searching for these names:
+- animal
+- galexy
+- language
+- programming
+- tools
+- suceess
+
+
 1- Open `http://localhost:3000 in your browser`. 
 <br>
 2- Configure your Unbody project using the Unbody.io UI.<br>
