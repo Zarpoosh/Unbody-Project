@@ -104,7 +104,7 @@ function GoogleDocBlock() {
           )
           .exec();
 
-        console.log(payload);
+        //! console.log(payload);
         setDocuments(payload);
         setIsLoading(false);
         setNumOfFiles(documents.length); // Set loading state to false after data is fetched
