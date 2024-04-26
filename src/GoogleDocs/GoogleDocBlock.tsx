@@ -128,6 +128,7 @@ function GoogleDocBlock() {
           onSearch={onSearch}
           foundDocument={foundDocument}
         />
+        {/* <NumberWordTitle numberWordALL={allTextNumber} word={word} onchangeNum={onchangeNumber} /> */}
         <div className="flex flex-col">
         {/* Displays the total number of available documents. */}
           <p id="total-file" className="text-2xl p-2 mx-auto">
