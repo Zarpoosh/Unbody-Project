@@ -77,7 +77,7 @@ function GoogleDocBlock() {
     const fetchData = async () => {
       try {
         const u = new Unbody({
-          apiKey: "DAE599E4B970781713A73A115BCAE4AE",
+          apiKey: "pk_43b0ad51440a0188dec136d91bcb38ab498fc7f53baec615c6365691b29d7238",
           projectId: "286f50a7-a8bb-4bfc-9b45-cad66b5e86db",
         });
 
@@ -89,7 +89,7 @@ function GoogleDocBlock() {
             "text",
             "summary",
             "title",
-            "autoSummary",
+            // "autoSummary",
             "path",
             "pathString",
             "remoteId",
@@ -104,7 +104,8 @@ function GoogleDocBlock() {
           )
           .exec();
 
-        //! console.log(payload);
+        console.log(payload);
+        console.log("hello")
         setDocuments(payload);
         setIsLoading(false);
         setNumOfFiles(documents.length); // Set loading state to false after data is fetched
